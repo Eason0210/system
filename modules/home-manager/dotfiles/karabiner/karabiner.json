@@ -9,32 +9,201 @@
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
-                    "basic.to_delayed_action_delay_milliseconds": 500,
+                    "basic.to_delayed_action_delay_milliseconds": 50,
                     "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "basic.to_if_held_down_threshold_milliseconds": 100,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
                     {
-                        "description": "Change caps_lock to control if pressed with other keys, to escape if pressed alone.",
+                        "description": "将 单独按下的 left shift 映射为 Ctrl+backslash，以切换输入法(emacs only)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "org.gnu.Emacs"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_shift"
+                                },
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "backslash",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_shift"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                      "description": "Emacs key bindings [ctrl+g -> Esc]",
+                      "manipulators": [
+                        {
+                          "type": "basic",
+                          "from": {
+                            "key_code": "g",
+                            "modifiers": {
+                              "mandatory": [
+                                "left_control"
+                              ],
+                              "optional": [
+                                "caps_lock",
+                                "shift"
+                              ]
+                            }
+                          },
+                          "to": [
+                            {
+                              "key_code": "escape"
+                            }
+                          ],
+                          "conditions": [
+                            {
+                              "type": "frontmost_application_unless",
+                              "bundle_identifiers": [
+                                "^org\\.gnu\\.Emacs$",
+                                "^com\\.googlecode\\.iterm2",
+                                "^com\\.apple\\.Terminal$",
+                                "^org\\.vim\\."
+                              ]
+                            }
+                          ]
+                        }
+
+                      ]
+                    },
+                    {
+                      "description": "Emacs key bindings [M-w -> M-c]",
+                      "manipulators": [
+                        {
+                          "type": "basic",
+                          "from": {
+                            "key_code": "w",
+                            "modifiers":
+                            {
+                              "mandatory": [
+                                "left_command"
+                              ]
+                            }
+                          },
+                          "to": [
+                            {
+                            "key_code": "c",
+                            "modifiers": "left_command"
+                            }
+                          ],
+                          "conditions": [
+                            {
+                              "type": "frontmost_application_unless",
+                              "bundle_identifiers": [
+                                "^org\\.gnu\\.Emacs$",
+                                "^org\\.vim\\.",
+                                "^com\\.apple\\.x11$"
+                              ]
+                            }
+                          ]
+                        }
+
+                      ]
+                    },
+                    {
+                      "description": "Emacs key bindings [C-w -> M-x]",
+                      "manipulators": [
+                        {
+                          "type": "basic",
+                          "from": {
+                            "key_code": "w",
+                            "modifiers":
+                            {
+                              "mandatory": [
+                                "left_control"
+                              ]
+                            }
+                          },
+                          "to": [
+                            {
+                            "key_code": "x",
+                            "modifiers": "left_command"
+                            }
+                          ],
+                          "conditions": [
+                            {
+                              "type": "frontmost_application_unless",
+                              "bundle_identifiers": [
+                                "^org\\.gnu\\.Emacs$",
+                                "^com\\.googlecode\\.iterm2",
+                                "^org\\.vim\\.",
+                                "^com\\.apple\\.x11$"
+                              ]
+                            }
+                          ]
+                        }
+
+                      ]
+                    },
+                    {
+                      "description": "Emacs key bindings [C-y -> M-v]",
+                      "manipulators": [
+                        {
+                          "type": "basic",
+                          "from": {
+                            "key_code": "y",
+                            "modifiers": {
+                              "mandatory": [
+                                "left_control"
+                              ]
+                            }
+                          },
+                          "to": [
+                            {
+                            "key_code": "v",
+                            "modifiers": "left_command"
+                            }
+                          ],
+                          "conditions": [
+                            {
+                              "type": "frontmost_application_unless",
+                              "bundle_identifiers": [
+                                "^org\\.gnu\\.Emacs$",
+                                "^org\\.vim\\.",
+                                "^com\\.apple\\.x11$"
+                              ]
+                            }
+                          ]
+                        }
+
+                      ]
+                    },
+                    {
+                        "description": "将单独按下的 left shift 映射为 Option + f12，以切换输入法(global)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "key_code": "left_shift"
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_control"
-                                    }
-                                ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "f12",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_shift"
                                     }
                                 ],
                                 "type": "basic"
@@ -43,159 +212,7 @@
                     }
                 ]
             },
-            "devices": [
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 832,
-                        "vendor_id": 1452
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 392,
-                        "vendor_id": 1241
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "left_command"
-                            },
-                            "to": {
-                                "key_code": "left_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_option"
-                            },
-                            "to": {
-                                "key_code": "left_command"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_command"
-                            },
-                            "to": {
-                                "key_code": "right_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_option"
-                            },
-                            "to": {
-                                "key_code": "right_command"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 30354,
-                        "vendor_id": 3141
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "left_command"
-                            },
-                            "to": {
-                                "key_code": "left_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_option"
-                            },
-                            "to": {
-                                "key_code": "left_command"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_command"
-                            },
-                            "to": {
-                                "key_code": "right_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_option"
-                            },
-                            "to": {
-                                "key_code": "right_command"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 361,
-                        "vendor_id": 1241
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "left_command"
-                            },
-                            "to": {
-                                "key_code": "left_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_option"
-                            },
-                            "to": {
-                                "key_code": "left_command"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_command"
-                            },
-                            "to": {
-                                "key_code": "right_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_option"
-                            },
-                            "to": {
-                                "key_code": "right_command"
-                            }
-                        }
-                    ]
-                }
-            ],
+            "devices": [],
             "fn_function_keys": [
                 {
                     "from": {
