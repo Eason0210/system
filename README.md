@@ -24,7 +24,7 @@ These modules are imported into all other configurations in the common module si
 
 ```nix
 { config, pkgs, ... }: {
-  home-manager.users.kclejeune = import ./home-manager/home.nix;
+  home-manager.users.aqua0210 = import ./home-manager/home.nix;
 }
 ```
 
@@ -57,7 +57,7 @@ Note that this step is naturally skipped on NixOS since `nix` is the package man
 Follow the installation instructions, then run
 
 ```bash
-sudo nixos-install --flake github:kclejeune/system#phil
+sudo nixos-install --flake github:Eason0210/system#phil
 ```
 
 ### Darwin/Linux
@@ -65,7 +65,7 @@ sudo nixos-install --flake github:kclejeune/system#phil
 Clone this repository into `~/.nixpkgs` with
 
 ```bash
-git clone https://github.com/kclejeune/system ~/.nixpkgs
+git clone https://github.com/Eason0210/system ~/.nixpkgs
 ```
 
 You can bootstrap a new nix-darwin system using
