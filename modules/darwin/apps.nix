@@ -10,7 +10,6 @@
       "raycast"
       "skim"
       "stats"
-      # "syncthing"
     ];
     masApps = { };
   };
