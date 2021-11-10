@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+EMACSAPP=Emacs
+EMACSPATH=../Applications/${EMACSAPP}.app/Contents/MacOS/${EMACSAPP}
+EMACSBIN="\$(dirname \$(which emacs))/$EMACSPATH"
+
+exec bash -c "unset TZ ; $EMACSBIN $@"
