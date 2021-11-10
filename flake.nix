@@ -142,11 +142,11 @@
 
       homeConfigurations = {
         server = mkHomeConfig {
-          username = "aqua0210";
+          username = "kclejeune";
           extraModules = [ ./profiles/home-manager/personal.nix ];
         };
         darwinServer = mkHomeConfig {
-          username = "aqua0210";
+          username = "kclejeune";
           system = "x86_64-darwin";
           extraModules = [ ./profiles/home-manager/personal.nix ];
         };
