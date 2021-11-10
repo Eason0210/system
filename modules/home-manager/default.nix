@@ -52,6 +52,7 @@ in {
       # comma
       coreutils-full
       curl
+      emacsGit
       fd
       gawk
       ghc
@@ -67,6 +68,7 @@ in {
       nixUnstable
       nixfmt
       nixpkgs-fmt
+      nix-scripts
       nodejs
       openjdk
       openssh
