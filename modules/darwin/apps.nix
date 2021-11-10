@@ -5,7 +5,7 @@
       "displaperture"
       "hammerspoon"
       "iina"
-      # "karabiner-elements"
+      "karabiner-elements"
       "kitty"
       "maccy"
       "raycast"
