@@ -3,7 +3,7 @@ self: super: {
 nix-scripts = with self; stdenv.mkDerivation {
   name = "nix-scripts";
 
-  src = ../bin;
+  src = ../../bin;
 
   buildInputs = [];
 
