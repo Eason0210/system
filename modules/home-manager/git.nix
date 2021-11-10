@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: {
   home.packages = [ pkgs.github-cli ];
   programs.git = {
-    userName = "Kennan LeJeune";
+    userName = "Eason Huang";
     extraConfig = {
       credential.helper = if pkgs.stdenvNoCC.isDarwin then
         "osxkeychain"
