@@ -68,7 +68,7 @@ in {
       nixUnstable
       nixfmt
       nixpkgs-fmt
-      nix-scripts
+      # nix-scripts
       nodejs
       openjdk
       openssh
