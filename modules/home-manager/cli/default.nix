@@ -118,12 +118,12 @@ in {
         TERM = "xterm-256color";
       };
       shellAliases = aliases;
-      initExtraBeforeCompInit = ''
-        fpath+=~/.zfunc
-      '';
+      # initExtraBeforeCompInit = ''
+      #   fpath+=~/.zfunc
+      # '';
       initExtra = ''
         ${functions}
-        [[ -d /opt/homebrew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+        [[ -d /usr/local/Homebrew ]] && eval "$(/usr/local/Homebrew/bin/brew shellenv)"
         unset RPS1
       '';
       plugins = with pkgs; [
