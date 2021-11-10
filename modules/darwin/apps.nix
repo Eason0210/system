@@ -6,6 +6,7 @@
       "hammerspoon"
       "iina"
       "karabiner-elements"
+      "kitty"
       "maccy"
       "raycast"
       "skim"
