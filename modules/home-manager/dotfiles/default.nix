@@ -1,10 +1,10 @@
 { config, pkgs, ... }: {
   home.file = {
-    raycast = {
-      source = ./raycast;
-      target = ".local/bin/raycast";
-      recursive = true;
-    };
+    # raycast = {
+    #   source = ./raycast;
+    #   target = ".local/bin/raycast";
+    #   recursive = true;
+    # };
     npmrc = {
       text = ''
         prefix = ${config.home.sessionVariables.NODE_PATH};
