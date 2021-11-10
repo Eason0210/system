@@ -125,7 +125,7 @@
           extraModules = [
             ./profiles/personal.nix
             ./modules/darwin/apps.nix
-            { homebrew.brewPrefix = "/opt/homebrew/bin"; }
+            { homebrew.brewPrefix = "/usr/local/Homebrew/bin"; }
           ];
         };
       };
