@@ -23,7 +23,6 @@
     extraSpecialArgs = { inherit inputs lib; };
     useGlobalPkgs = true;
     useUserPackages = true;
-    backupFileExtension = "backup";
   };
 
   # environment setup
