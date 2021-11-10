@@ -120,14 +120,6 @@
         }) lib.platforms.linux));
 
       darwinConfigurations = {
-        randall = mkDarwinConfig {
-          system = "aarch64-darwin";
-          extraModules = [
-            ./profiles/personal.nix
-            ./modules/darwin/apps.nix
-            { homebrew.brewPrefix = "/opt/homebrew/bin"; }
-          ];
-        };
         randall-intel = mkDarwinConfig {
           system = "x86_64-darwin";
           extraModules = [
@@ -135,10 +127,6 @@
             ./modules/darwin/apps.nix
             { homebrew.brewPrefix = "/opt/homebrew/bin"; }
           ];
-        };
-        work = mkDarwinConfig {
-          extraModules =
-            [ ./profiles/work.nix ./modules/darwin/apps-minimal.nix ];
         };
       };
 
@@ -161,10 +149,6 @@
           username = "kclejeune";
           system = "x86_64-darwin";
           extraModules = [ ./profiles/home-manager/personal.nix ];
-        };
-        workServer = mkHomeConfig {
-          username = "lejeukc1";
-          extraModules = [ ./profiles/home-manager/work.nix ];
         };
         vagrant = mkHomeConfig {
           username = "vagrant";
