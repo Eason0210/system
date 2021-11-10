@@ -47,7 +47,7 @@ in {
       # python with default packages
       (python3.withPackages
         (ps: with ps; [ black numpy scipy networkx matplotlib ]))
-      awscli2
+      # awscli2
       cachix
       # comma
       coreutils-full
@@ -80,7 +80,7 @@ in {
       rsync
       sysdo
       tealdeer
-      tectonic
+      # tectonic
       treefmt
       vagrant
       yarn
