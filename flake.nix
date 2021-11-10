@@ -105,7 +105,7 @@
           name = system;
           value = {
             darwin =
-              self.darwinConfigurations.randall-intel.config.system.build.toplevel;
+              self.darwinConfigurations.MacBook.config.system.build.toplevel;
             darwinServer =
               self.homeConfigurations.darwinServer.activationPackage;
           };
@@ -120,7 +120,7 @@
         }) lib.platforms.linux));
 
       darwinConfigurations = {
-        randall-intel = mkDarwinConfig {
+        MacBook = mkDarwinConfig {
           system = "x86_64-darwin";
           extraModules = [
             ./profiles/personal.nix

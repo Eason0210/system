@@ -71,7 +71,7 @@ git clone https://github.com/Eason0210/system ~/.nixpkgs
 You can bootstrap a new nix-darwin system using
 
 ```bash
-nix --extra-experimental-features "nix-command flakes" develop -c sysdo bootstrap --darwin randall
+nix --extra-experimental-features "nix-command flakes" develop -c sysdo bootstrap --darwin MacBook
 ```
 
 or a home-manager configuration using
