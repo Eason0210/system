@@ -14,10 +14,8 @@
       "homebrew/cask-versions"
       "homebrew/core"
       "homebrew/services"
-      "koekeishiya/formulae"
-      "teamookla/speedtest"
     ];
 
-    brews = [ "yabai" "skhd" ];
+    brews = [ ];
   };
 }
