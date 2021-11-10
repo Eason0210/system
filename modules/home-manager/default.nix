@@ -59,7 +59,7 @@ in {
       gnugrep
       gnupg
       gnused
-      google-cloud-sdk
+      # google-cloud-sdk
       htop
       httpie
       jq
