@@ -10,11 +10,6 @@
       target = ".local/bin/raycast";
       recursive = true;
     };
-    zfunc = {
-      source = ./zfunc;
-      target = ".zfunc";
-      recursive = true;
-    };
     npmrc = {
       text = ''
         prefix = ${config.home.sessionVariables.NODE_PATH};
@@ -32,14 +27,6 @@
     };
     kitty = {
       source = ./kitty;
-      recursive = true;
-    };
-    skhd = {
-      source = ./skhd;
-      recursive = true;
-    };
-    yabai = {
-      source = ./yabai;
       recursive = true;
     };
   };
