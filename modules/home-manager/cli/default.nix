@@ -18,7 +18,12 @@ let
         [ "--preview '${pkgs.tree}/bin/tree -C {} | head -200'" ];
       historyWidgetOptions = [ ];
     };
-  aliases = { } // (if !pkgs.stdenvNoCC.isDarwin then
+  aliases = {
+    ec = ''emacsclient -t -a " "'';
+
+    proxy = "export all_proxy=socks5://127.0.0.1:1080";
+    unproxy = "unset all_proxy";
+  } // (if !pkgs.stdenvNoCC.isDarwin then
     { }
   else {
     # platform specific aliases
