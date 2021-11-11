@@ -85,3 +85,10 @@ nix --extra-experimental-features "nix-command flakes" develop -c sysdo bootstra
 The `sysdo` utility is a python script that wraps `nix`, `darwin-rebuild`, `nixos-rebuild`,
 and `home-manager` commands to provide a consistent interface across multiple platforms. It has some dependencies which are defined in the `devShell`
 flake output. Documentation for this tool is found in [sysdo.md](./docs/sysdo.md).
+
+## About this project
+
+This project is forked from [kclejeune/system](https://github.com/kclejeune/system) for customization, and make it work on my machines.
+
+Recently, I mainly use it on MacBook Pro (macOS Monterey, Intel I9 CPU), haven't tested on NixOS and Linux. But It should work on other platforms.
+
