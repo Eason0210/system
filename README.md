@@ -91,4 +91,3 @@ flake output. Documentation for this tool is found in [sysdo.md](./docs/sysdo.md
 This project is forked from [kclejeune/system](https://github.com/kclejeune/system) for customization, and make it work on my machines.
 
 Recently, I mainly use it on MacBook Pro (macOS Monterey, Intel I9 CPU), haven't tested on NixOS and Linux. But It should work on other platforms.
-
