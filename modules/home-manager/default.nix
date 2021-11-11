@@ -42,6 +42,7 @@ in
         JAVA_HOME = "${pkgs.openjdk.home}";
         NODE_PATH = "${NODE_GLOBAL}/lib";
         HOMEBREW_NO_AUTO_UPDATE = 1;
+        ASPELL_CONF = "conf ${config.xdg.configHome}/aspell/config;";
       };
       sessionPath = [ "${NODE_GLOBAL}/bin" ];
 
