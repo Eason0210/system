@@ -66,7 +66,6 @@ in
           (ps: with ps; [ black numpy scipy networkx matplotlib ]))
         aspell
         aspellDicts.en
-        # awscli2
         cachix
         # comma
         coreutils-full
@@ -80,7 +79,6 @@ in
         gnugrep
         gnupg
         gnused
-        # google-cloud-sdk
         hugo
         imagemagick
         htop
@@ -109,7 +107,6 @@ in
         sqlite
         sysdo
         tealdeer
-        # tectonic
         treefmt
         vagrant
         yarn
