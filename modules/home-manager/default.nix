@@ -88,7 +88,6 @@ in
         jq
         mpv
         neofetch
-        nixUnstable
         nixfmt
         nixpkgs-fmt
         nodejs
