@@ -26,9 +26,9 @@
     ];
 
     binaryCaches =
-      [ "https://kclejeune.cachix.org" "https://nix-community.cachix.org/" ];
+      [ "https://eason0210.cachix.org" "https://nix-community.cachix.org/" ];
     binaryCachePublicKeys = [
-      "kclejeune.cachix.org-1:fOCrECygdFZKbMxHClhiTS6oowOkJ/I/dh9q9b1I4ko="
+      "eason0210.cachix.org-1:+3t6gpdGWBJcwVoV7gNMSzKCxxlxqS+YrY6YCynvgSg="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
 
