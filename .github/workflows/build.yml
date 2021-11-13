@@ -22,14 +22,9 @@ jobs:
         with:
           # Shallow clones won't work
           fetch-depth: 0
-      - uses: cachix/install-nix-action@v14.1
-        env:
-          NIX_VERSION: nix-2.4pre20210823_af94b54
+      - uses: cachix/install-nix-action@v15
         with:
-          install_url: https://github.com/numtide/nix-unstable-installer/releases/download/${{ env.NIX_VERSION }}/install
-          extra_nix_config: |
-            experimental-features = nix-command flakes
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+          nix_path: nixpkgs=channel:nixos-unstable
       - uses: cachix/cachix-action@v10
         with:
           name: eason0210
