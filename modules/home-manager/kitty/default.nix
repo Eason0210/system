@@ -3,10 +3,10 @@ let theme = builtins.readFile ./theme.conf;
 in {
   programs.kitty = {
     enable = false;
-    # font = {
-    #   package = pkgs.jetbrains-mono;
-    #   name = "JetBrains Mono";
-    # };
+    font = {
+      package = pkgs.jetbrains-mono;
+      name = "JetBrains Mono";
+    };
     settings = {
       bold_font = "auto";
       italic_font = "auto";
