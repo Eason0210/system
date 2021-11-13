@@ -28,7 +28,7 @@ These modules are imported into all other configurations in the common module si
 }
 ```
 
-This means that [home.nix](./modules/home-manager/home.nix) is fully compatible as a standalone configuration, managed with the `home-manager` CLI.
+This means that [home.nix](./modules/home-manager/default.nix) is fully compatible as a standalone configuration, managed with the `home-manager` CLI.
 This allows close replication of any user config for any linux system running nix. These configurations are defined in the `homeConfigurations` output.
 
 ### User Customization
