@@ -175,3 +175,31 @@ $ sysdo update [OPTIONS]
 * `-f, --flake [FLAKE]`: specify an individual flake to be updated
 * `--commit / --no-commit`: commit the updated lockfile  [default: False]
 * `--help`: Show this message and exit.
+
+## `sysdo git-pull`
+
+pull changes from remote repo
+
+**Usage**:
+
+```console
+$ sysdo git-pull [OPTIONS]
+```
+
+**Options**:
+
+* `--help`: Show this message and exit.
+
+## `sysdo git-push`
+
+update remote repo with current changes
+
+**Usage**:
+
+```console
+$ sysdo git-push [OPTIONS]
+```
+
+**Options**:
+
+* `--help`: Show this message and exit.
