@@ -42,7 +42,7 @@ When possible, home-manager functionality is extracted into [./profiles/home-man
 ### Non-NixOS Prerequisite: Install Nix Package Manager
 
 Run the installer script to perform a multi-user installation
-on darwin or any other type of linux. This script can optionally accept an argument with the URL to a nix installer, but will use the nixFlakes installer by default:
+on darwin or any other type of linux. This script can optionally accept an argument with the URL to a nix installer, but will use the nixStable installer by default:
 
 ```bash
 ./install-nix.sh
