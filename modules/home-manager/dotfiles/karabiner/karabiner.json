@@ -16,38 +16,6 @@
                 },
                 "rules": [
                     {
-                        "description": "将 单独按下的 left shift 映射为 Ctrl+backslash，以切换输入法(emacs only)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "org.gnu.Emacs"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "left_shift"
-                                },
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "backslash",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "left_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                       "description": "Emacs key bindings [ctrl+g -> Esc]",
                       "manipulators": [
                         {
@@ -185,30 +153,6 @@
                         }
 
                       ]
-                    },
-                    {
-                        "description": "将单独按下的 left shift 映射为 Option + f12，以切换输入法(global)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_shift"
-                                },
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "f12",
-                                        "modifiers": [
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "left_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },
