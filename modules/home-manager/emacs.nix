@@ -6,6 +6,7 @@
     package = pkgs.emacsGit;
     extraPackages = epkgs: with epkgs; [
       aggressive-indent
+      ahk-mode
       anzu
       auto-package-update
       avy
