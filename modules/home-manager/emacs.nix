@@ -81,6 +81,7 @@
       session
       shfmt
       shift-number
+      sis
       skewer-less
       skewer-mode
       super-save
