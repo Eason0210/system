@@ -14,7 +14,39 @@
                     "basic.to_if_held_down_threshold_milliseconds": 100,
                     "mouse_motion_to_scroll.speed": 100
                 },
-                "rules": [
+              "rules": [
+                    {
+                        "description": "将单独按下的 caps_lock 映射为 Ctrl+f9，以切换输入法(emacs only)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.gnu\\.Emacs"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "caps_lock"
+                                },
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "f9",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                       "description": "Emacs key bindings [ctrl+g -> Esc]",
                       "manipulators": [
