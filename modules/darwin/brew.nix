@@ -14,8 +14,9 @@
       "homebrew/cask-versions"
       "homebrew/core"
       "homebrew/services"
+      "laishulu/macism"
     ];
 
-    brews = [ ];
+    brews = [ "macism" ];
   };
 }
