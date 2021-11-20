@@ -20,9 +20,11 @@
     buildCores = 8;
     maxJobs = 8;
     readOnlyStore = true;
-    nixPath = [
-      "nixpkgs=/etc/${config.environment.etc.nixpkgs.target}"
-      "home-manager=/etc/${config.environment.etc.home-manager.target}"
+    nixPath = builtins.map
+      (source: "${source}=/etc/${config.environment.etc.${source}.target}") [
+      "home-manager"
+      "nixpkgs"
+      "stable"
     ];
 
     binaryCaches =
