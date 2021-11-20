@@ -58,9 +58,6 @@ in
         (exe haskellPackages.ormolu)
         (exe haskellPackages.hie-bios)
         (exe haskellPackages.implicit-hie)
-        # C/C++ tools
-        clang-tools
-        cppcheck
         # python with default packages
         (python3.withPackages
           (ps: with ps; [ black numpy scipy networkx matplotlib ]))
