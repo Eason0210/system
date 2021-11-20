@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   home.file = {
     # raycast = {
     #   source = ./raycast;

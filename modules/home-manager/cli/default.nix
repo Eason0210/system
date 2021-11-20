@@ -133,9 +133,18 @@ in
         #   fpath+=~/.zfunc
         # '';
         initExtra = ''
-          ${functions}
-          [[ -d /usr/local/Homebrew ]] && eval "$(/usr/local/Homebrew/bin/brew shellenv)"
-          unset RPS1
+           ${functions}
+           ${if pkgs.stdenvNoCC.isDarwin then ''
+            [[ -d /usr/local/Homebrew ]] && eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+          '' else
+            ""}
+           unset RPS1
+        '';
+        profileExtra = ''
+          ${if pkgs.stdenvNoCC.isLinux then
+             "[[ -e /etc/profile ]] && source /etc/profile"
+           else
+             ""}
         '';
         plugins = with pkgs; [
           (mkZshPlugin { pkg = zsh-autopair; })
