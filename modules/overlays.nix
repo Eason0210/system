@@ -12,10 +12,10 @@
       };
     })
     # Emacs overlay
-    (import (builtins.fetchTarball {
-      url =
-        "https://github.com/nix-community/emacs-overlay/archive/2b1f3e962b1e504cec6226499ad76ac69596ecbe.tar.gz";
-      sha256 = "0n1ngwn725bqrdpp6a4a1q9gkf2582awdwyi4ny1lc3pv08pb3x2";
+    (import (builtins.fetchGit {
+      url = "https://github.com/nix-community/emacs-overlay.git";
+      ref = "master";
+      rev = "89c94427256d2f9960d3437e96ef93def024b215";
     }))
   ];
 }
