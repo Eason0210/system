@@ -13,6 +13,7 @@
       beacon
       bind-key
       browse-at-remote
+      cmake-mode
       color-theme-sanityinc-tomorrow
       company
       consult
