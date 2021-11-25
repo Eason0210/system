@@ -14,6 +14,7 @@
       bind-key
       browse-at-remote
       cmake-mode
+      code-review
       color-theme-sanityinc-tomorrow
       company
       consult
@@ -39,7 +40,6 @@
       fullframe
       git-modes
       git-timemachine
-      github-review
       go-translate
       haskell-mode
       highlight-escape-sequences
