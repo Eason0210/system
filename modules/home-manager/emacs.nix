@@ -86,6 +86,7 @@
       sis
       skewer-less
       skewer-mode
+      sudo-edit
       super-save
       switch-window
       symbol-overlay
