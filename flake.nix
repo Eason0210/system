@@ -20,7 +20,7 @@
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     comma = {
-      url = "github:Shopify/comma";
+      url = "github:nix-community/comma";
       flake = false;
     };
     flake-compat = {
