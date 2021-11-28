@@ -12,10 +12,6 @@
       };
     })
     # Emacs overlay
-    (import (builtins.fetchGit {
-      url = "https://github.com/nix-community/emacs-overlay.git";
-      ref = "master";
-      rev = "640ff172f47d3c6ae959494b888f19a75d41ffbd";
-    }))
+    inputs.emacs-overlay.overlay
   ];
 }
