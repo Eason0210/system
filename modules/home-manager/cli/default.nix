@@ -86,6 +86,7 @@ in
     };
     jq.enable = true;
     htop.enable = true;
+    tmux.enable = true;
     gpg.enable = true;
     git = {
       enable = true;
