@@ -4,6 +4,7 @@
       "appcleaner"
       "displaperture"
       "hammerspoon"
+      "iterm2"
       "iina"
       "karabiner-elements"
       "kitty"
