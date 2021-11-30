@@ -4,6 +4,9 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacsGit;
+    overrides = self: super: {
+      org = self.elpaPackages.org;
+    };
     extraPackages = epkgs: with epkgs; [
       aggressive-indent
       ahk-mode
