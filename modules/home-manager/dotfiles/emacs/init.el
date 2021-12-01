@@ -1969,6 +1969,35 @@ there is no current file, eval the current buffer."
   (super-save-mode 1))
 
 
+;;; Email setup with Mu4e
+
+(when (and (executable-find "mu") *is-a-mac*)
+  (use-package mu4e
+    :ensure nil
+    :disabled
+    :config
+    (setq mu4e-mu-binary (executable-find "mu"))
+    (setq mu4e-maildir "~/.maildir")
+    (setq mu4e-get-mail-command (concat (executable-find "mbsync") " -a"))
+    (setq mu4e-update-interval 300)
+    (setq mu4e-attachment-dir (concat mu4e-maildir "/attachment"))
+    (setq mu4e-change-filenames-when-moving t)
+    (setq mu4e-user-mail-address-list '("aqua0210@qq.com"))
+
+    ;; check your ~/.maildir to see how the subdirectories are called
+    ;; for the generic imap account:
+    ;; e.g `ls ~/.maildir/QQmail'
+    (setq mu4e-maildir-shortcuts
+          '(("/QQmail/INBOX" . ?i)
+            ("/QQmail/Sent Messages" . ?I)))
+
+    (add-to-list 'mu4e-bookmarks
+                 (make-mu4e-bookmark
+                  :name "Inbox - QQmail"
+                  :query "maildir:/QQmail/INBOX"
+                  :key ?i))))
+
+
 ;;; Support code and region folding
 
 (use-package origami

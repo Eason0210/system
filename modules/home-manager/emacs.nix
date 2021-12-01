@@ -64,6 +64,7 @@
       mode-line-bell
       modern-cpp-font-lock
       move-dup
+      mu4e-alert
       multiple-cursors
       nix-mode
       nixpkgs-fmt
