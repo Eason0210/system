@@ -4,7 +4,7 @@ let
   name = "Eason Huang";
   maildir = "${homeDir}/.maildir";
   email = "aqua0210@gmail.com";
-  netease = "aqua0210@163.com";
+  qqmail = "aqua0210@qq.com";
 in
 {
   accounts.email = {
@@ -14,23 +14,33 @@ in
       Gmail = {
         address = "${email}";
         userName = "${email}";
-        flavor = "gmail.com";
-        passwordCommand = "security find-generic-password -s mu4e-gmail -a aqua0210 -w";
-        primary = true;
+        flavor = "plain";
+        passwordCommand = "security find-generic-password -s mu4e-gmail -a aqua0210@gmail.com -w";
         mbsync = {
-          enable = true;
+          enable = false;
           create = "both";
           expunge = "both";
-          patterns = [ "*" "[Gmail]*" ]; # "[Gmail]/Sent Mail" ];
+          patterns = [ "*" ];
         };
+        imap = {
+          host = "imap.gmail.com";
+          port = 993;
+          tls.enable = true;
+        };
+
         realName = "Eason Huang";
         msmtp.enable = true;
+        smtp = {
+          host = "smtp.gmail.com";
+          port = 465;
+        };
       };
-      Netease = {
-        address = "${netease}";
-        userName = "${netease}";
+      QQmail = {
+        address = "${qqmail}";
+        userName = "${qqmail}";
         flavor = "plain";
-        passwordCommand = "security find-generic-password -s mu4e-163 -a aqua0210@163.com -w";
+        passwordCommand = "security find-generic-password -s mu4e-qqmail -a aqua0210@qq.com -w";
+        primary = true;
         mbsync = {
           enable = true;
           create = "both";
@@ -38,15 +48,15 @@ in
           patterns = [ "*" ];
         };
         imap = {
-          host = "imap.163.com";
+          host = "imap.qq.com";
           port = 993;
           tls.enable = true;
         };
         realName = "Eason Huang";
         msmtp.enable = true;
         smtp = {
-          host = "smtp.163.com";
-          tls.useStartTls = true;
+          host = "smtp.qq.com";
+          port = 465;
         };
       };
     };
