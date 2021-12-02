@@ -1974,6 +1974,7 @@ there is no current file, eval the current buffer."
 (when (and (executable-find "mu") *is-a-mac*)
   (use-package mu4e
     :ensure nil
+    :bind ("C-c g" . mu4e)
     :config
     (setq mu4e-mu-binary (executable-find "mu"))
     (setq mu4e-maildir "~/.maildir")
