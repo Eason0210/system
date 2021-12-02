@@ -5,11 +5,11 @@
   };
 
   nix = {
-    package = pkgs.nixStable;
+    package = pkgs.nixFlakes;
     extraOptions = ''
       keep-outputs = true
       keep-derivations = true
-      ${lib.optionalString (config.nix.package == pkgs.nixStable)
+      ${lib.optionalString (config.nix.package == pkgs.nixFlakes)
       "experimental-features = nix-command flakes"}
     '';
     trustedUsers = [ "${config.user.name}" "root" "@admin" "@wheel" ];
