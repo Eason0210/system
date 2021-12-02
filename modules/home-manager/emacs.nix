@@ -108,6 +108,6 @@
       yaml-mode
       yasnippet
       yasnippet-snippets
-    ];
+    ] ++ [ pkgs.mu ];
   };
 }
