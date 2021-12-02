@@ -17,7 +17,7 @@ in
         flavor = "plain";
         passwordCommand = "security find-generic-password -s mu4e-gmail -a aqua0210@gmail.com -w";
         mbsync = {
-          enable = false;
+          enable = true;
           create = "both";
           expunge = "both";
           patterns = [ "*" ];
