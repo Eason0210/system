@@ -60,7 +60,7 @@ in
         (exe haskellPackages.implicit-hie)
         # python with default packages
         (python3.withPackages
-          (ps: with ps; [ black numpy scipy networkx matplotlib ]))
+          (ps: with ps; [ black numpy scipy networkx matplotlib pre-commit ]))
         aspell
         aspellDicts.en
         cachix
@@ -90,7 +90,6 @@ in
         openjdk
         openssh
         pandoc
-        pre-commit
         poetry
         pstree
         ranger
