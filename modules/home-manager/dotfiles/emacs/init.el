@@ -2166,11 +2166,6 @@ there is no current file, eval the current buffer."
 
 ;;; Dictionaries
 
-(when *is-a-mac*
-  (use-package osx-dictionary
-    :bind (("C-c t i" . osx-dictionary-search-input)
-           ("C-c t x" . osx-dictionary-search-pointer))))
-
 (use-package fanyi
   :bind (("C-c t f" . fanyi-dwim)
          ("C-c t d" . fanyi-dwim2))
