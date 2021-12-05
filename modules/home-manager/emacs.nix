@@ -97,6 +97,7 @@
         super-save
         switch-window
         symbol-overlay
+        telega
         textile-mode
         typescript-mode
         use-package

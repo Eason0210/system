@@ -80,6 +80,7 @@ in
         htop
         httpie
         jq
+        libwebp
         mpv
         neofetch
         nix
