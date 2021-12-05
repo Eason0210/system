@@ -2166,17 +2166,6 @@ there is no current file, eval the current buffer."
 
 ;;; Dictionaries
 
-(use-package fanyi
-  :bind (("C-c t f" . fanyi-dwim)
-         ("C-c t d" . fanyi-dwim2))
-  :config
-  (setq fanyi-haici-chart-inhibit-same-window t)
-  :custom
-  (fanyi-providers '(fanyi-haici-provider
-                     fanyi-youdao-thesaurus-provider
-                     fanyi-etymon-provider
-                     fanyi-longman-provider)))
-
 (use-package go-translate
   :bind (("C-c t g" . gts-do-translate)
          ("C-c t p" . go-translate-at-point)
