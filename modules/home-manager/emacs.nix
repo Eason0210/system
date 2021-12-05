@@ -38,7 +38,6 @@
         eglot
         embark
         embark-consult
-        fanyi
         flycheck
         flycheck-color-mode-line
         flycheck-package
@@ -78,13 +77,11 @@
         org-pomodoro
         org-roam
         origami
-        osx-dictionary
         paredit
         projectile
         quickrun
         rainbow-delimiters
         reformatter
-        rime
         rustic
         scratch
         session
