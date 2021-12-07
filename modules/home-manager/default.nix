@@ -105,6 +105,7 @@ in
         sqlite
         sysdo
         tealdeer
+        torsocks
         treefmt
         vagrant
         yarn
