@@ -13,7 +13,7 @@ let
 
 in
 {
-  imports = [ ./vim ./emacs.nix ./cli ./kitty ./dotfiles ./git.nix ./mail.nix];
+  imports = [ ./vim ./cli ./kitty ./dotfiles ./git.nix ./mail.nix];
 
   programs.home-manager = {
     enable = true;
@@ -68,6 +68,7 @@ in
         coreutils-full
         coq
         curl
+        emacsGit
         fd
         gawk
         ghc
