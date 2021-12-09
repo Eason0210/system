@@ -89,6 +89,7 @@ in
         nixpkgs-fmt
         nodejs
         nodePackages.eslint
+        nodePackages.pyright
         openjdk
         openssh
         pandoc
