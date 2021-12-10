@@ -3,10 +3,11 @@
   programs.git = {
     userName = "Eason Huang";
     extraConfig = {
-      credential.helper = if pkgs.stdenvNoCC.isDarwin then
-        "osxkeychain"
-      else
-        "cache --timeout=1000000000";
+      credential.helper =
+        if pkgs.stdenvNoCC.isDarwin then
+          "osxkeychain"
+        else
+          "cache --timeout=1000000000";
       http.sslVerify = true;
       pull.rebase = false;
       commit.verbose = true;
@@ -18,5 +19,13 @@
     };
     delta.enable = true;
     lfs.enable = true;
+    ignores = [
+      "*~"
+      "*.swp"
+      "*.elc"
+      "*-autoloads.el"
+      "dir"
+      "*.info"
+    ];
   };
 }
