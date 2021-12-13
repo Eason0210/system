@@ -4,7 +4,7 @@ let
   name = "Eason Huang";
   maildir = "${homeDir}/.maildir";
   email = "aqua0210@gmail.com";
-  qqmail = "aqua0210@qq.com";
+  foxmail = "aqua0210@foxmail.com";
 in
 {
   accounts.email = {
@@ -35,11 +35,11 @@ in
           port = 465;
         };
       };
-      QQmail = {
-        address = "${qqmail}";
-        userName = "${qqmail}";
+      Foxmail = {
+        address = "${foxmail}";
+        userName = "${foxmail}";
         flavor = "plain";
-        passwordCommand = "security find-generic-password -s mu4e-qqmail -a aqua0210@qq.com -w";
+        passwordCommand = "security find-generic-password -s mu4e-foxmail -a aqua0210@foxmail.com -w";
         primary = true;
         mbsync = {
           enable = true;
