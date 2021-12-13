@@ -104,6 +104,7 @@ in
         shfmt
         sqlite
         sysdo
+        tdlib
         tealdeer
         torsocks
         treefmt
