@@ -16,10 +16,6 @@
   xdg.enable = true;
   xdg.configFile = {
     "nixpkgs/config.nix".source = ../../config.nix;
-    emacs = {
-      source = ./emacs;
-      recursive = true;
-    };
     karabiner = {
       source = ./karabiner;
       recursive = true;
