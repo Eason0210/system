@@ -7,7 +7,6 @@
       "iterm2"
       "iina"
       "karabiner-elements"
-      "kitty"
       "maccy"
       "raycast"
       "skim"
