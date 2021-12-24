@@ -67,6 +67,7 @@ in
         # comma
         coreutils-full
         coq
+        cppcheck
         curl
         fd
         gawk
