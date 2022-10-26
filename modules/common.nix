@@ -1,4 +1,4 @@
-{ inputs, config, lib, pkgs, nixpkgs, stable, ... }: {
+{ self, inputs, config, lib, pkgs, ... }: {
   imports = [ ./primary.nix ./nixpkgs.nix ./overlays.nix ];
 
   programs.zsh = {
@@ -20,7 +20,7 @@
 
   # let nix manage home-manager profiles and use global nixpkgs
   home-manager = {
-    extraSpecialArgs = { inherit inputs lib; };
+    extraSpecialArgs = { inherit self inputs; };
     useGlobalPkgs = true;
     useUserPackages = true;
   };
@@ -29,7 +29,7 @@
   environment = {
     systemPackages = with pkgs; [
       # editors
-      neovim
+      # neovim
 
       # standard toolset
       coreutils
@@ -40,7 +40,7 @@
 
       # helpful shell stuff
       bat
-      fzf
+      # fzf
       ripgrep
       zsh
 
@@ -50,8 +50,8 @@
     ];
     etc = {
       home-manager.source = "${inputs.home-manager}";
-      nixpkgs.source = "${nixpkgs}";
-      stable.source = "${stable}";
+      nixpkgs.source = "${inputs.nixpkgs}";
+      stable.source = "${inputs.stable}";
     };
     # list of acceptable shells in /etc/shells
     shells = with pkgs; [ bash zsh fish ];
