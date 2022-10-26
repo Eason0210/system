@@ -61,18 +61,14 @@ in
         cachix
         # comma
         coreutils-full
-        coq
-        cppcheck
         curl
         fd
         gawk
         ghc
         git
         gnugrep
-        gnupg
         gnused
         hugo
-        imagemagick
         htop
         httpie
         jq
@@ -82,21 +78,20 @@ in
         nix
         nixfmt
         nixpkgs-fmt
-        nodejs
+        nodejs_latest
         nodePackages.eslint
         nodePackages.pyright
         openjdk
         openssh
         pandoc
         poetry
+        pre-commit
         pstree
         (ruby.withPackages (ps: with ps; [ rufo solargraph ]))
         ripgrep
         rsync
         shfmt
         sqlite
-        sysdo
-        tdlib
         tealdeer
         torsocks
         treefmt
