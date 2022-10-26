@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ./nvim
+    # ./nvim
     # ./emacs.nix
     ./cli
     ./dotfiles
