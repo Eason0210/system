@@ -2,23 +2,6 @@
   # bundles essential nixos modules
   imports = [ ./keybase.nix ../common.nix ];
 
-  services.interception-tools = {
-    enable = true;
-    plugins = with pkgs.interception-tools-plugins; [ caps2esc ];
-    udevmonConfig = ''
-      - JOB: intercept -g $DEVNODE | caps2esc -m 1 | uinput -d $DEVNODE
-        DEVICE:
-          EVENTS:
-            EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
-    '';
-  };
-
-  # manually disable this to resolve https://github.com/NixOS/nixos-hardware/issues/260
-  # TODO: resolve this later
-  services.power-profiles-daemon.enable = false;
-
-  fonts = { fontDir.enable = true; };
-
   services.syncthing = {
     enable = true;
     user = config.user.name;
@@ -35,13 +18,9 @@
   users = {
     defaultUserShell = pkgs.zsh;
     mutableUsers = false;
-    groups.localtimed = { };
     users = {
-      localtimed.group = "localtimed";
       "${config.user.name}" = {
         isNormalUser = true;
-        createHome = true;
-        useDefaultShell = true;
         extraGroups =
           [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
         hashedPassword =
@@ -83,7 +62,7 @@
   # Set your time zone.
   # time.timeZone = "EST";
   services.geoclue2.enable = true;
-  services.localtime.enable = true;
+  services.localtimed.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
