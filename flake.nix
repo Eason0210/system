@@ -200,6 +200,7 @@
               nixfmt
               pre-commit
               self.packages.${system}.pyEnv
+              stylua
               treefmt
             ];
             commands = [{
