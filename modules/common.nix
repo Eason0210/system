@@ -29,7 +29,7 @@
   environment = {
     systemPackages = with pkgs; [
       # editors
-      # neovim
+      neovim
 
       # standard toolset
       coreutils
