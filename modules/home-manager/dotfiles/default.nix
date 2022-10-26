@@ -20,10 +20,10 @@
       source = ./karabiner;
       recursive = true;
     };
-    kitty = {
-      source = ./kitty;
-      recursive = true;
-    };
+    # kitty = {
+    #   source = ./kitty;
+    #   recursive = true;
+    # };
     "aspell/config".text = ''
        local-data-dir ${pkgs.aspell}/lib/aspell
        data-dir ${pkgs.aspellDicts.en}/lib/aspell
