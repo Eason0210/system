@@ -1,19 +1,14 @@
-{ inputs, config, pkgs, ... }:
+{ self, inputs, config, pkgs, ... }:
 let
   homeDir = config.home.homeDirectory;
-  pyEnv = (pkgs.stable.python3.withPackages
-    (ps: with ps; [ black pylint typer colorama shellingham ]));
-  sysDoNixos =
-    "[[ -d /etc/nixos ]] && cd /etc/nixos && ${pyEnv}/bin/python bin/do.py $@";
-  sysDoDarwin =
-    "[[ -d ${homeDir}/.nixpkgs ]] && cd ${homeDir}/.nixpkgs && ${pyEnv}/bin/python bin/do.py $@";
-  sysdo = (pkgs.writeShellScriptBin "sysdo" ''
-    (${sysDoNixos}) || (${sysDoDarwin})
-  '');
-
 in
 {
-  imports = [ ./vim ./emacs.nix ./cli ./dotfiles ./git.nix ];
+  imports = [
+    ./vim
+    # ./emacs.nix
+    ./cli
+    ./dotfiles
+    ./git.nix ];
 
   programs.home-manager = {
     enable = true;
@@ -32,7 +27,7 @@ in
       # You can update Home Manager without changing this value. See
       # the Home Manager release notes for a list of state version
       # changes in each release.
-      stateVersion = "20.09";
+      stateVersion = "22.05";
       sessionVariables = {
         GPG_TTY = "/dev/ttys000";
         EDITOR = "nvim";
@@ -41,7 +36,7 @@ in
         LSCOLORS = "ExFxBxDxCxegedabagacad";
         JAVA_HOME = "${pkgs.openjdk.home}";
         NODE_PATH = "${NODE_GLOBAL}/lib";
-        HOMEBREW_NO_AUTO_UPDATE = 1;
+        # HOMEBREW_NO_AUTO_UPDATE = 1;
         ASPELL_CONF = "conf ${config.xdg.configHome}/aspell/config;";
       };
       sessionPath = [ "${NODE_GLOBAL}/bin" ];
@@ -60,7 +55,7 @@ in
         (exe haskellPackages.implicit-hie)
         # python with default packages
         (python3.withPackages
-          (ps: with ps; [ black numpy scipy networkx matplotlib pre-commit ]))
+          (ps: with ps; [ numpy scipy ]))
         aspell
         aspellDicts.en
         cachix
@@ -95,13 +90,9 @@ in
         pandoc
         poetry
         pstree
-        ranger
         (ruby.withPackages (ps: with ps; [ rufo solargraph ]))
         ripgrep
-        ripgrep-all
         rsync
-        rust-analyzer
-        rustup
         shfmt
         sqlite
         sysdo
@@ -111,7 +102,6 @@ in
         treefmt
         vagrant
         yarn
-        youtube-dl
       ];
     };
 }
