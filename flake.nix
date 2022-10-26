@@ -228,13 +228,13 @@
           '';
         });
 
-      # apps = eachSystemMap defaultSystems (system: rec {
-      #   sysdo = {
-      #     type = "app";
-      #     program = "${self.packages.${system}.sysdo}/bin/sysdo";
-      #   };
-      #   default = sysdo;
-      # });
+      apps = eachSystemMap defaultSystems (system: rec {
+        sysdo = {
+          type = "app";
+          program = "${self.packages.${system}.sysdo}/bin/sysdo";
+        };
+        default = sysdo;
+      });
 
       overlays = {
         channels = final: prev: {
