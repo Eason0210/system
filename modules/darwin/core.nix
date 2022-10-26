@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ... }:
 let
   prefix = "/run/current-system/sw/bin";
-  inherit (pkgs.stdenvNoCC) isAarch64 isAarch32;
+  # inherit (pkgs.stdenvNoCC) isAarch64 isAarch32;
 in
 {
   # environment setup
@@ -15,14 +15,14 @@ in
     # systemPackages = [ ];
   };
 
-  homebrew.brewPrefix = if isAarch64 || isAarch32 then "/opt/homebrew/bin" else "/usr/local/bin";
+  # homebrew.brewPrefix = if isAarch64 || isAarch32 then "/opt/homebrew/bin" else "/usr/local/bin";
 
   # auto manage nixbld users with nix darwin
   nix = {
     configureBuildUsers = true;
     nixPath = [ "darwin=/etc/${config.environment.etc.darwin.target}" ];
     extraOptions = ''
-      extra-platforms = x86_64-darwin aarch64-darwin
+      extra-platforms = x86_64-darwin
     '';
   };
 
