@@ -42,17 +42,7 @@ in
       sessionPath = [ "${NODE_GLOBAL}/bin" ];
 
       # define package definitions for current user environment
-      packages = with pkgs; let exe = haskell.lib.justStaticExecutables; in
-      [
-        # Haskell tools
-        (exe haskellPackages.cabal-install)
-        (exe haskellPackages.hpack)
-        (exe haskellPackages.haskell-language-server)
-        (exe haskellPackages.hlint)
-        (exe haskellPackages.hindent)
-        (exe haskellPackages.ormolu)
-        (exe haskellPackages.hie-bios)
-        (exe haskellPackages.implicit-hie)
+      packages = with pkgs; [
         # python with default packages
         (python3.withPackages
           (ps: with ps; [ numpy scipy ]))
