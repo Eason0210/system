@@ -74,7 +74,6 @@ in
         openjdk
         openssh
         pandoc
-        poetry
         pre-commit
         pstree
         (ruby.withPackages (ps: with ps; [ rufo solargraph ]))
